@@ -7,16 +7,18 @@ using System.Text;
 namespace SamplingSimulator
 {
 
-    class Population
+    public class Population
     {
         private Dictionary<uint, bool> thePopulation = new Dictionary<uint, bool>();
         private Random rnd = new Random();
         private double roll;
         public uint trues {get;}
         public  uint falses { get; }
+        public uint count { get;  } 
 
         public Population(uint size, double probability)
         {
+            count = size;
             trues = 0;
             falses = 0; 
             for (uint i = 0; i < size; i++)
@@ -41,6 +43,11 @@ namespace SamplingSimulator
             {
                 Console.WriteLine("Entry: {0}, value: {1}", kvp.Key, kvp.Value); 
             }
+        }
+
+        public bool GetVal(uint index)
+        {
+            return thePopulation[index]; 
         }
     }
 }

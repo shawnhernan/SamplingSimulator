@@ -12,7 +12,9 @@ namespace SamplingSimulator
             Console.WriteLine("Hello World!");
             Population thePopulation = new Population(5000, 0.5);
             //thePopulation.Print();
-            Console.WriteLine("total true: {0}, total false: {1}", thePopulation.trues, thePopulation.falses); 
+            Console.WriteLine("total true: {0}, total false: {1}", thePopulation.trues, thePopulation.falses);
+            uint count = Sample.Sampler(thePopulation, 19);
+            Console.WriteLine("Sample is {0}", count); 
         }
     }
 }
